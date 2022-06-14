@@ -42,5 +42,10 @@ console.log(averageCookieSales);
 console.log(seattle.cookieSalesPerHourArray);
 console.log(seattle.DailyTotal);
 
+let textElement = document.getElementById('test');
+console.log(textElement);
+textElement.textContent = 'I am an element';
+
 // let textElement = document.getElementById('seattleresults');
 // console.log(textElement);
+// textElement.textContent = 'I am an element';
