@@ -15,6 +15,33 @@
         
     </table>
     
+    
+    <form id="new-store">
+      <fieldset>
+        <legend>Create new Store</legend>
+        <div>
+          <label>Store Name</label>
+          <input id='store-name' name="storeName" type="text" placeholder="Ex: Ballard" required>
+        </div>
+        <div>
+          <label>Max Cust Per Hour</label>
+          <input type="number" name="maxCust">
+        </div>
+        <div>
+          <label>Min Cust Per Hour</label>
+          <input type="number" name="minCust">
+        </div>
+        <div>
+          <label>Avg Cookies per sale</label>
+          <input type="number" name="avgSale" placeholder="Ex. 4.3">
+        </div>
+        <button id="submit-button">Submit Me</button>
+      </fieldset>
+      <!-- <input type="button" value="Click Me"> -->
+      <!-- this will attempt to "submit" the form element -->
+      <br>
+    </form>
+    <button id=clearTable onclick='clearTable()'>Nuke It!!!</button>
     <script src="/JS/salesapp.js"></script>
 </body>
 </html>

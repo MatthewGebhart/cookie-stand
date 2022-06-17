@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+
 let openHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 let dailyTotalArray = [];
@@ -29,12 +30,14 @@ function custPerHour(max, min, avg, open = 6, close = 19) {
 
 function Store(name, min, max, avg, open = 6, close = 19) {
   this.name = name;
-  this.minCustPerHour = min;
-  this.macCustPerHour - max;
-  this.avgCookiesPerSale = avg;
+  this.min = min;
+  this.max - max;
+  this.avg = avg;
   this.custAtEachHourArray = custPerHour(max, min, avg)[0];
   this.dailyTotal = custPerHour(max, min, avg)[1];
 }
+
+// console.log(Store);
 
 const seattle = new Store('seattle', 23, 65, 6.3);
 const tokyo = new Store('tokyo', 3, 24, 1.2);
@@ -43,12 +46,13 @@ const paris = new Store('paris', 20, 38, 2.3);
 const lima = new Store('lima', 2, 16, 4.6);
 
 
-console.log(seattle);
-console.log(tokyo);
-console.log(dubai);
-console.log(paris);
-console.log(lima);
+// console.log(seattle);
+// console.log(tokyo);
+// console.log(dubai);
+// console.log(paris);
+// console.log(lima);
 console.log(dailyTotalArray);
+
 
 
 /////// Write Table to page ////////
@@ -83,13 +87,15 @@ function render(storeLocation) {
   let tableEl = document.getElementById('results-data');
   let tableRowEl = document.createElement('tr');
   let storeEl = document.createElement('td');
-  storeEl.classList.add('store-location')
+  storeEl.classList.add('store-location');
   let totalEl = document.createElement('td');
   totalEl.classList.add('totals');
 
   tableEl.appendChild(tableRowEl);
   tableRowEl.appendChild(storeEl);
   storeEl.textContent = storeLocation.name;
+
+  console.log(storeLocation);
 
   for (let i=0; i < storeLocation.custAtEachHourArray.length; i++) {
     let newDataCell = document.createElement('td');
@@ -137,4 +143,103 @@ function renderFooter() {
 
 renderFooter();
 
+function clearTable() {
+  let tableElement = document.getElementById('results-data');
+  tableElement.innerHTML = '';
+
+};
+
 ///Collaboration credit to Isaiah Keller for helping me clean up some of the rendering stuff///
+
+
+
+///Adding Form input///
+
+let formElement = document.getElementById('new-store');
+// 
+
+
+let newStore = [];
+
+// function NewStore(name, max, min, avg) {
+//   this.storeName = name;
+//   this.maxCust = max;
+//   this.minCust = min;
+//   this.avgCookiesPerSale = avg;
+// }
+
+formElement.addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log(event.target.storeName.value);
+  console.log(event.target.maxCust.value);
+  console.log(event.target.minCust.value);
+  console.log(event.target.avgSale.value);
+
+  let name = event.target.storeName.value;
+  let max = event.target.maxCust.value;
+  let min = event.target.minCust.value;
+  let avg = event.target.avgSale.value;
+
+  let newStore = new Store(name, min, max, avg);
+
+  // newStore.push(store);
+  // console.log(newStore);
+  renderNewStore(newStore);
+  // return (newStore);
+});
+
+
+
+
+
+
+function renderNewStore(newStore) {
+  let tableEl = document.getElementById('results-data');
+  let tableRowEl = document.createElement('tr');
+  let storeEl = document.createElement('td');
+  storeEl.classList.add('store-location');
+  let totalEl = document.createElement('td');
+  totalEl.classList.add('totals');
+
+  tableEl.appendChild(tableRowEl);
+  tableRowEl.appendChild(storeEl);
+  storeEl.textContent = newStore.name;
+
+  console.log(newStore);
+
+  for (let i=0; i < newStore.custAtEachHourArray.length; i++) {
+    let newDataCell = document.createElement('td');
+    tableRowEl.appendChild(newDataCell);
+    newDataCell.textContent = newStore.custAtEachHourArray[i];
+  }
+
+  tableRowEl.appendChild(totalEl);
+  totalEl.textContent = newStore.total;
+
+}
+
+
+// function render(storeLocation) {
+//   let tableEl = document.getElementById('results-data');
+//   let tableRowEl = document.createElement('tr');
+//   let storeEl = document.createElement('td');
+//   storeEl.classList.add('store-location');
+//   let totalEl = document.createElement('td');
+//   totalEl.classList.add('totals');
+
+//   tableEl.appendChild(tableRowEl);
+//   tableRowEl.appendChild(storeEl);
+//   storeEl.textContent = storeLocation.name;
+
+//   console.log(storeLocation);
+
+//   for (let i=0; i < storeLocation.custAtEachHourArray.length; i++) {
+//     let newDataCell = document.createElement('td');
+//     tableRowEl.appendChild(newDataCell);
+//     newDataCell.textContent = storeLocation.custAtEachHourArray[i];
+//   }
+
+//   tableRowEl.appendChild(totalEl);
+//   totalEl.textContent = storeLocation.total;
+
+// }
