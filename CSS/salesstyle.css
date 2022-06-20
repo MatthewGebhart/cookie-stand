@@ -1,0 +1,18 @@
+
+
+body, a { background-color: grey; color:white;}
+
+.empty { border: none;}
+
+table { 
+    border: 5px black; width:auto; margin: 10px; overflow-x: scroll; overflow-y: scroll; 
+
+}
+
+td, th, tr {
+    border: 3px solid black; padding: 1px; border-radius: 10%; text-align: center;
+}
+
+.store-location, .totals, .heading, .total {
+    font-weight: bold;
+}

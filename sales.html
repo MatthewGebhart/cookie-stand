@@ -4,39 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Information</title>
     <link rel="stylesheet" href="/CSS/salesstyle.css">
+    <title>Sales Information</title>
 </head>
 <body>
     <h1>Sales Numbers!</h1>
     <a href="index.html">Take me Home</a>
     
-    <h2>Seattle</h2>
-    <section id="seattle-results">
+    <table id="results-data">
         
-    </section> 
+    </table>
     
-    <h2>Tokyo</h2>
-    <section id='tokyo-results'>
     
-    </section>    
-
-    <h2>Dubai</h2>
-    <section id='dubai-results'>
-    
-    </section> 
-
-    <h2>Paris</h2>
-    <section id='paris-results'>
-    
-    </section> 
-
-    <h2>Lima</h2>
-    <section id='lima-results'>
-    
-    </section> 
-
-
+    <form id="new-store">
+      <fieldset>
+        <legend>Create new Store</legend>
+        <div>
+          <label>Store Name</label>
+          <input id='store-name' name="storeName" type="text" placeholder="Ex: Ballard" required>
+        </div>
+        <div>
+          <label>Max Cust Per Hour</label>
+          <input type="number" name="maxCust">
+        </div>
+        <div>
+          <label>Min Cust Per Hour</label>
+          <input type="number" name="minCust">
+        </div>
+        <div>
+          <label>Avg Cookies per sale</label>
+          <input type="number" name="avgSale" placeholder="Ex. 4.3">
+        </div>
+        <button id="submit-button">Submit Me</button>
+      </fieldset>
+      <!-- <input type="button" value="Click Me"> -->
+      <!-- this will attempt to "submit" the form element -->
+      <br>
+    </form>
+    <button id=clearTable onclick='clearTable()'>Nuke It!!!</button>
     <script src="/JS/salesapp.js"></script>
 </body>
 </html>

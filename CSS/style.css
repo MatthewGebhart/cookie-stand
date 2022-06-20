@@ -1,0 +1,59 @@
+body {
+    background-color: salmon;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+header, footer {
+    height: 70px;
+    background-color: blanchedalmond;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 5px 5px 10px black;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+}
+
+nav {
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a {
+    margin:15px;
+}
+
+#logo {
+    justify-content: left;
+   width: 200px;
+}
+
+main {
+   
+}
+
+h1, h2 { text-align: center; 
+    h1.font-size: 40px;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#imageDump img {
+    width: 200px;
+    border-radius: 30%;
+}
+
+ul {
+}
+#locations {
+flex-direction: row;
+
+}
