@@ -1,6 +1,13 @@
 
+h1 {font-family: 'Anek Malayalam', sans-serif;
 
-body, a { background-color: grey; color:white;}
+}
+
+
+
+body, a { background-color: grey; color:white; font-family: Arial, Helvetica, sans-serif;}
+
+
 
 .empty { border: none;}
 
@@ -13,6 +20,8 @@ td, th, tr {
     border: 3px solid black; padding: 1px; border-radius: 10%; text-align: center;
 }
 
+
 .store-location, .totals, .heading, .total {
     font-weight: bold;
+    background-color: darkgray;
 }
