@@ -47,11 +47,19 @@ h2 { text-align: center;
    color: blanchedalmond;
 }
 
-#what-in {
+.center-stuff {
+    display: inline-block;
     text-align: center;
     text-emphasis: bold;
     padding-top: 0px;
     margin-top: 5px;
+    justify-items: center;
+    color: blanchedalmond;
+}
+
+.center-stuff img {
+    width: 200px;
+    border-radius: 20%;
 }
 
 li {
